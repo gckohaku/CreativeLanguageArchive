@@ -2,8 +2,8 @@
 import { ref, type Ref } from 'vue';
 
 export interface Props {
-	open: boolean;
-	animationDuration: number;
+	open?: boolean;
+	animationDuration?: number;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -11,16 +11,14 @@ const props = withDefaults(defineProps<Props>(), {
 	animationDuration: 0,
 });
 
-const emit = defineEmits<{
-	"update:modelValue": [value: boolean]
-}>();
+const isOpen: Ref<boolean> = ref(props.open);
 </script>
 
 <template>
-	<div class="wrapper" :class="props.open ? 'details-open' : ''">
+	<div class="wrapper" :class="isOpen ? 'details-open' : ''">
 		<div class="summary-container">
 
-			<button class="details-button" @click="$emit('update:modelValue', !props.open)">▼</button>
+			<button class="details-button" @click="isOpen = !isOpen">▼</button>
 			<slot name="summary">
 
 			</slot>
