@@ -1,3 +1,3 @@
-import { ContentUnit } from "./ContentUnit";
+import { type ContentUnit } from "./ContentUnit";
 
 export const contentData: ContentUnit[] = [];
