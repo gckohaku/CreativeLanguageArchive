@@ -5,6 +5,7 @@ import GcDetails from '@/components/modules/GcDetails.vue';
 import pushContentData from "@/page-contents/index"
 import { onBeforeMount, onMounted } from 'vue';
 import { contentData } from '@/common/contentData';
+import ContentInfoCard from '@/components/ContentInfoCard.vue';
 
 onBeforeMount(() => {
 	contentData.splice(0);
@@ -27,6 +28,8 @@ onBeforeMount(() => {
 				{{ content }}
 			</div>
 		</template>
+
+		<ContentInfoCard></ContentInfoCard>
 	</div>
 </template>
 
