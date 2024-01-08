@@ -23,9 +23,25 @@ const props = withDefaults(defineProps<Props>(), {
 		<p>{{ data.title }}</p>
 		<p>{{ data.creatingDate }}</p>
 		<p>{{ data.content }}</p>
+		<div class="content-tags">
+			<span v-for="tag in data.tags">{{ tag }}</span>
+		</div>
 	</div>
 </template>
 
 <style scoped lang="scss">
-// style here
+.content-card {
+	margin-block-end: 1rem;
+	border: black 2px solid;
+
+	.content-tags {
+		span {
+			padding-inline-end: 0.5rem;
+
+			&::before {
+				content: '#';
+			}
+		}
+	}
+}
 </style>
