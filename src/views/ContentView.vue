@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import pushContentData from "@/page-contents/index"
 import { onBeforeMount } from 'vue';
+
 import { contentData } from '@/common/contentData';
-import ContentList from '@/components/ContentsList.vue';
+import ContentArea from '@/components/ContentArea.vue';
+import pushContentData from "@/page-contents";
 
 onBeforeMount(() => {
 	contentData.splice(0);
@@ -14,9 +15,9 @@ onBeforeMount(() => {
 </script>
 
 <template>
-	<div>
-		<ContentList :contents="contentData"></ContentList>
-	</div>
+	<ContentArea :data="contentData[0]" />
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+// style here
+</style>
