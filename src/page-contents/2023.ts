@@ -9,7 +9,7 @@ export default () => {
 		title: "2023年2月_1",
 		creatingDate: "2023/02/14 くらい",
 		images: [imgDir + "02/2023_02_1.jpg"],
-		content: "[img_set|1]",
+		content: "alpha$&$[img_set|1]$&$beta",
 		tags: ["test", "2023"],
 	});
 	contentData.push({
