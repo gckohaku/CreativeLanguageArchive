@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { onBeforeMount } from 'vue';
 
-import { contentData } from '@/common/contentData';
+import { contentsData } from '@/common/contentsData';
 import ContentArea from '@/components/ContentArea.vue';
 import pushContentData from "@/page-contents";
 
 onBeforeMount(() => {
-	contentData.splice(0);
+	contentsData.splice(0);
 
 	for (const pushContent of pushContentData) {
 		pushContent();
@@ -15,7 +15,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-	<ContentArea :data="contentData[0]" />
+	<ContentArea :data="contentsData.find((ctn) => ctn.id === $route.params.id)" />
 </template>
 
 <style scoped lang="scss">
