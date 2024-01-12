@@ -3,6 +3,7 @@ import { onBeforeMount } from 'vue';
 
 import type { ContentUnit } from '@/common/ContentUnit';
 import pushContentData from "@/page-contents";
+import TagsArea from './TagsArea.vue';
 
 export interface Props {
 	data?: ContentUnit;
@@ -45,7 +46,7 @@ const getImageIndex = (re: RegExpMatchArray | null): number => {
 			</template>
 			<p v-else v-html="para.replace('$n$', '<br>')"></p>
 		</template>
-		<div class="tags"><span v-for="tag of data.tags">{{ tag }}</span></div>
+		<div class="tags"><TagsArea :tags="data.tags" /></div>
 	</div>
 </template>
 

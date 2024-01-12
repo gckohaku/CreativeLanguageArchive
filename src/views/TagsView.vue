@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Tag from '@/components/Tag.vue';
+import TagsArea from '@/components/TagsArea.vue';
 import { contentsStore } from '@/stores/contents';
 
 const storeContents = contentsStore();
@@ -16,11 +18,11 @@ const setTags: Set<string> = new Set(allTags);
 </script>
 
 <template>
-	<div v-for="tag of setTags" class="tags-container">
-		<div class="tag-area">
-			<RouterLink :to="'/tag/' + tag">{{ tag }}</RouterLink>
-		</div>
+	<div class="tags-area">
+		<TagsArea :tags="Array.from(setTags)" />
 	</div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+
+</style>
