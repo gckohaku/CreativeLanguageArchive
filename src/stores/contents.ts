@@ -4,7 +4,7 @@ import { type Ref, ref, computed } from "vue";
 import type { ContentUnit } from "@/common/ContentUnit";
 import { contentsData } from "@/common/contentsData";
 import pushContentData from "@/page-contents/index";
-import ContentsList from "@/components/ContentsList.vue";
+import ContentsList from "@/components/ContentList.vue";
 
 export const contentsStore = defineStore("contentsStore", () => {
 	contentsData.splice(0);

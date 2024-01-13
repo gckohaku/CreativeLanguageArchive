@@ -2,7 +2,7 @@
 import pushContentData from "@/page-contents/index"
 import { onBeforeMount } from 'vue';
 import { contentsData } from '@/common/contentsData';
-import ContentList from '@/components/ContentsList.vue';
+import ContentList from '@/components/ContentList.vue';
 
 onBeforeMount(() => {
 	contentsData.splice(0);

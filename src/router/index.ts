@@ -3,7 +3,7 @@ import IndexView from '@/views/IndexView.vue';
 import Year2023View from '@/views/Year2023View.vue';
 import ContentView from '@/views/ContentView.vue';
 import HomeView from '@/views/HomeView.vue';
-import ContentsList from '@/components/ContentsList.vue';
+import ContentList from '@/components/ContentList.vue';
 import TagsView from '@/views/TagsView.vue';
 import TagContentsView from '@/views/TagContentsView.vue';
 
