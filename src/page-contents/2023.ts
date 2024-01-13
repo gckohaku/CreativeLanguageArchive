@@ -11,7 +11,7 @@ export default () => {
 		creatingDate: "2023/02/14 くらい",
 		images: [imgDir + "02/2023_02_1.jpg"],
 		content: "[img_set|1]",
-		tags: ["test", "2023"],
+		tags: ["2023"],
 	});
 	contentsData.push({
 		id: "2023_02_2",
@@ -19,7 +19,7 @@ export default () => {
 		creatingDate: "2023/02/27 くらい",
 		images: [imgDir + "02/2023_02_2.png"],
 		content: "[img_set|1]",
-		tags: ["test", "2023"],
+		tags: ["2023"],
 	});
 	contentsData.push({
 		id: "2023_03_1",
