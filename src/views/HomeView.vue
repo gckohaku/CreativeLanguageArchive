@@ -3,10 +3,8 @@
 </script>
 
 <template>
+	<div class="index-container">
 	<ul>
-		<li>
-			<RouterLink to="/2023">2023</RouterLink>
-		</li>
 		<li>
 			<RouterLink to="/list">list</RouterLink>
 		</li>
@@ -14,6 +12,12 @@
 			<RouterLink to="/tag-list">tag list</RouterLink>
 		</li>
 	</ul>
+</div>
 </template>
 
-<style scoped lang="scss">// style here</style>
+<style scoped lang="scss">
+.index-container {
+	display: flex;
+	justify-content: center;
+}
+</style>
