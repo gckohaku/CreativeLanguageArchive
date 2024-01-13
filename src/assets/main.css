@@ -1,9 +1,14 @@
 @import './base.css';
 
 #app {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
-  color: #1c1c1c;
+	--commonContentWidth: 1080px;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 2rem;
+	font-weight: normal;
+	color: #1c1c1c;
+}
+
+.page-container {
+	width: var(--commonContentWidth);
 }
