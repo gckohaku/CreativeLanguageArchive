@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
 	}
 });
 
-const imgRegex = /\[img_set\|(?<index>\d+)\]/;
+const imgRegex = /\[img_set\|(?<index>\d+)(\|(?<caption>.+)|)\]+/;
 
 const paragraphs: string[] = props.data.content.split("$&$");
 
@@ -30,7 +30,17 @@ const getImageIndex = (re: RegExpMatchArray | null): number => {
 	if (re && re.groups && re.groups.index) {
 		return parseInt(re.groups.index) - 1;
 	}
+
 	throw "'error when get image index '";
+}
+
+const generateCaption = (re: RegExpMatchArray | null): string => {
+	if (re && re.groups && re.groups.caption) {
+		return re.groups.caption.replace("$n$", "<br>");
+	}
+	throw "'error when get image index '";
+
+	throw "no image tag data";
 }
 </script>
 
@@ -39,19 +49,22 @@ const getImageIndex = (re: RegExpMatchArray | null): number => {
 		<h2>{{ data.title }}</h2>
 		<p>{{ data.creatingDate }}</p>
 		<template v-for="(para, index) of paragraphs">
-			<template v-if="imgRegex.test(para)">
-				<div class="content-image-container">
-					<img class="content-image" :src="data.images[getImageIndex(para.match(imgRegex))]" />
-				</div>
-			</template>
+			<figure class="content-image-container" v-if="imgRegex.test(para)">
+				<img class="content-image" :src="data.images[getImageIndex(para.match(imgRegex))]" />
+				<figcaption v-if="para.match(imgRegex)?.groups?.caption" v-html="generateCaption(para.match(imgRegex))"></figcaption>
+			</figure>
 			<p v-else v-html="para.replace('$n$', '<br>')"></p>
 		</template>
-		<div class="tags"><TagsArea :tags="data.tags" /></div>
+	</div>
+	<div class="tags">
+		<TagsArea :tags="data.tags" />
 	</div>
 </template>
 
 <style scoped lang="scss">
 .content-wrapper {
+	width: 100%;
+
 	.content-image-container {
 		text-align: center;
 

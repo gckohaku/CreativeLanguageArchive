@@ -1,17 +1,12 @@
 <script setup lang="ts">
 import { onBeforeMount } from 'vue';
 
-import { contentsData } from '@/common/contentsData';
 import ContentArea from '@/components/ContentArea.vue';
-import pushContentData from "@/page-contents";
+import { contentsStore } from '@/stores/contents';
 
-onBeforeMount(() => {
-	contentsData.splice(0);
+const storeContents = contentsStore();
 
-	for (const pushContent of pushContentData) {
-		pushContent();
-	}
-});
+const contentsData = storeContents.contentsList;
 </script>
 
 <template>

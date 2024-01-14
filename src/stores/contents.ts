@@ -9,8 +9,15 @@ import ContentsList from "@/components/ContentList.vue";
 export const contentsStore = defineStore("contentsStore", () => {
 	contentsData.splice(0);
 
-	for (const pushContent of pushContentData) {
-		pushContent();
+	for (const category of pushContentData) {
+		if (typeof category === "function") {
+			category();
+		}
+		else {
+			for (const pushContent of category) {
+				pushContent();
+			}
+		}
 	}
 
 	const contentsList: Ref<ContentUnit[]> = ref(contentsData);
