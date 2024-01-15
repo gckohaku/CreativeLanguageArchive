@@ -24,7 +24,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const imgRegex = /\[img_set\|(?<index>\d+)(\|(?<caption>.+)|)\]+/;
 
-const paragraphs: string[] = props.data.content.split("$&$");
+const paragraphs: string[] = props.data.content.replace("\n", "").split("$&$");
 
 const getImageIndex = (re: RegExpMatchArray | null): number => {
 	if (re && re.groups && re.groups.index) {

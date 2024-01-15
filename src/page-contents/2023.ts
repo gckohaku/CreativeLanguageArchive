@@ -1,5 +1,5 @@
-import {contentsData} from "@/common/contentsData";
-import {environmentsStore} from "@/stores/environments"
+import { contentsData } from "@/common/contentsData";
+import { environmentsStore } from "@/stores/environments"
 
 export default () => {
 	const store = environmentsStore();
@@ -27,7 +27,7 @@ export default () => {
 		creatingDate: "",
 		images: [],
 		content: "ここに文章を貼り付ける",
-		tags: ["test", "2023", "hidden"],
+		tags: ["2023", "hidden"],
 	});
 	contentsData.push({
 		id: "2023_03_2",
@@ -35,7 +35,7 @@ export default () => {
 		creatingDate: "",
 		images: [],
 		content: "ここに文章を貼り付ける",
-		tags: ["test", "2023", "hidden"],
+		tags: ["2023", "hidden"],
 	});
 	contentsData.push({
 		id: "2023_04_1",
@@ -43,7 +43,7 @@ export default () => {
 		creatingDate: "",
 		images: [],
 		content: "ここに文章を貼り付ける",
-		tags: ["test", "2023", "hidden"],
+		tags: ["2023", "hidden"],
 	});
 	contentsData.push({
 		id: "2023_04_2",
@@ -51,7 +51,6 @@ export default () => {
 		creatingDate: "",
 		images: [],
 		content: "ここに文章を貼り付ける",
-		tags: ["test", "2023", "hidden"],
+		tags: ["2023", "hidden"],
 	});
 }
-

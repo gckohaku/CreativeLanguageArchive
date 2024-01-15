@@ -1,22 +1,19 @@
 <script setup lang="ts">
 import pushContentData from "@/page-contents/index"
-import { onBeforeMount } from 'vue';
-import { contentsData } from '@/common/contentsData';
 import ContentList from '@/components/ContentList.vue';
+import { contentsStore } from "@/stores/contents";
 
-onBeforeMount(() => {
-	contentsData.splice(0);
-
-	for (const pushContent of pushContentData) {
-		pushContent();
-	}
-});
+const storeContents = contentsStore();
 </script>
 
 <template>
-	<div>
-		<ContentList :contents="contentsData"></ContentList>
+	<div class="content-list">
+		<ContentList :contents="storeContents.contentsList"></ContentList>
 	</div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.content-list {
+	width: 100%;
+}
+</style>

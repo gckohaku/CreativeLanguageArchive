@@ -14,6 +14,8 @@ import Header from './components/Header.vue';
 <style scoped>
 .router-content {
 	max-width: var(--commonContentWidth);
-	margin-inline: auto;
+	padding: 2rem;
+	box-sizing: border-box;
+	width: 100%;
 }
 </style>
