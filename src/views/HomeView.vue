@@ -1,5 +1,7 @@
 <script setup lang="ts">
-// script here
+import type { env } from 'process';
+
+console.log(import.meta.env.BASE_URL);
 </script>
 
 <template>
