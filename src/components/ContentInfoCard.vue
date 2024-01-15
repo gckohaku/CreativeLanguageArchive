@@ -8,6 +8,7 @@ export interface Props {
 const props = withDefaults(defineProps<Props>(), {
 	data: (props: Props): ContentUnit => {
 		return {
+			id: "template",
 			title: "タイトル",
 			creatingDate: "XXXX/XX/XX",
 			images: [],
@@ -20,9 +21,8 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
 	<div class="content-card">
-		<p>{{ data.title }}</p>
+		<RouterLink :to="'/content/' + data.id">{{ data.title }}</RouterLink>
 		<p>{{ data.creatingDate }}</p>
-		<p>{{ data.content }}</p>
 		<div class="content-tags">
 			<span v-for="tag in data.tags">{{ tag }}</span>
 		</div>

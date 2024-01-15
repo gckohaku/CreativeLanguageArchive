@@ -1,26 +1,19 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
-import GcDetails from '@/components/modules/GcDetails.vue';
-
 import pushContentData from "@/page-contents/index"
-import { onBeforeMount, onMounted } from 'vue';
-import { contentData } from '@/common/contentData';
-import ContentInfoCard from '@/components/ContentInfoCard.vue';
-import ContentList from '@/components/ContentsList.vue';
+import ContentList from '@/components/ContentList.vue';
+import { contentsStore } from "@/stores/contents";
 
-onBeforeMount(() => {
-	contentData.splice(0);
-
-	for (const pushContent of pushContentData) {
-		pushContent();
-	}
-});
+const storeContents = contentsStore();
 </script>
 
 <template>
-	<div>
-		<ContentList :contents="contentData"></ContentList>
+	<div class="content-list">
+		<ContentList :contents="storeContents.contentsList"></ContentList>
 	</div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.content-list {
+	width: 100%;
+}
+</style>
