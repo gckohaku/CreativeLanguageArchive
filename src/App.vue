@@ -6,20 +6,26 @@ import Header from './components/Header.vue';
 <template>
 	<Header></Header>
 
-	<div class="router-content">
-		<RouterView />
+	<div class="router-wrapper">
+		<div class="router-content">
+			<RouterView />
+		</div>
 	</div>
 
 	<div class="copyright">©gckohaku 2022-2024</div>
 </template>
 
 <style scoped>
-.router-content {
+.router-wrapper {
+	display: flex;
+	justify-content: center;
+
+	.router-content {
 	max-width: var(--commonContentWidth);
 	padding: 2rem;
 	box-sizing: border-box;
 	width: 100%;
-}
+}}
 
 .copyright {
 	position: fixed;
