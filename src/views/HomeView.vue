@@ -3,6 +3,12 @@
 </script>
 
 <template>
+	<section class="before-index">
+		<h2>このサイトはなに？</h2>
+		<p>このサイトは、私が制作している創作言語 (人工言語) の画像をまとめておくためのサイトです。<br>そういう場所が必要だと感じたから用意した。</p>
+		<p>現在、アルファ版として公開中です。</p>
+	</section>
+
 	<div class="index-container">
 		<ul>
 			<li>
@@ -16,6 +22,10 @@
 </template>
 
 <style scoped lang="scss">
+h2, p {
+	text-align: center;
+}
+
 .index-container {
 	display: flex;
 	justify-content: center;

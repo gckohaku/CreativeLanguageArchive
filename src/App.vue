@@ -18,4 +18,8 @@ import Header from './components/Header.vue';
 	box-sizing: border-box;
 	width: 100%;
 }
+
+:deep(:is(h2, h3, h4, p, figure, ul)) {
+	margin-block-end: 1rem;
+}
 </style>
