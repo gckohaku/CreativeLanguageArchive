@@ -12,7 +12,7 @@ import Header from './components/Header.vue';
 		</div>
 	</div>
 
-	<div class="copyright">©gckohaku 2022-2024</div>
+	<div class="copyright">©gckohaku 2022-2024 (alpha-4)</div>
 </template>
 
 <style scoped>
