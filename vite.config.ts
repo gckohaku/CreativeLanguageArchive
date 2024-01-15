@@ -8,7 +8,7 @@ export default defineConfig({
 	plugins: [
 		vue(),
 	],
-	base: '/CreativeLanguageArchive/',
+	base: process.env.NODE_ENV === "production" ? '/CreativeLanguageArchive/' : "./",
 	resolve: {
 		alias: {
 			'@': fileURLToPath(new URL('./src', import.meta.url))
@@ -28,5 +28,4 @@ export default defineConfig({
 			}
 		},
 	},
-
 })
