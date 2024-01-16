@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html lang="jp">
-
-<head>
-	<meta name="robots" content="noindex">
-	<meta charset="UTF-8">
-	<link rel="icon" href="/CreativeLanguageArchive/favicon.ico">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>waiting...</title>
-	<script lang="ts">
-		const l = window.location;
-		const splitPath = l.pathname.split("/");
-		if (process.env.NODE_ENV === "production") {
+	<head>
+		<meta name="robots" content="noindex">
+		<meta charset="UTF-8">
+		<link rel="icon" href="/CreativeLanguageArchive/favicon.ico">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>waiting...</title>
+		<script lang="ts">
+			const l = window.location;
+			const splitPath = l.pathname.split("/");
 			const addPath = splitPath.slice(2, splitPath.length).join("/");
 			l.replace(`${l.origin}/${splitPath[1]}/#/${addPath}`);
-		}
-		else {
-			const addPath = splitPath.slice(1, splitPath.length).join("/");
-			l.replace(`${l.origin}/${splitPath[0]}/#/${addPath}`);
-		}
-	</script>
-</head>
-
-<body>
-	<div>waiting...</div>
-</body>
-
+		</script>
+	</head>
+	<body>
+		<div>waiting...</div>
+	</body>
 </html>
